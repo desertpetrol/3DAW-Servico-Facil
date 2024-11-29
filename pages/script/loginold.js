@@ -1,27 +1,41 @@
-$(function() {
+// login
+    $('#butlogin').on('click', function () {
+        $("#error1").hide();
+        var v = document.getElementById("error1");
+        var username = $('#email_log').val();
+        var password = $('#password_log').val();
+        setTimeout(function () { $("#error1").fadeOut(1000); }, 3000);
+        if (username == "" && password == "") {
+            $("#error1").show();
+            $('#error_show12').html('Please fill all the field!');
+            v.className += " alert-danger";
+        }
+        else {
+            $.ajax({
+                url: "login_reg_insert.php",
+                type: "POST",
+                data: {
+                    type: 2,
+                    username: username,
+                    password: password
+                },
+                cache: false,
+                success: function (dataResult) {
+                    var dataResult = JSON.parse(dataResult);
+                    if (dataResult.statusCode == 200) {
+                        location.href = "home.php";
+                    }
+                    else if (dataResult.statusCode == 201) {
+                        $("#error1").show();
+                        $('#error_show12').html('Invalid EmailId or Password !');
+                        v.className += " alert-danger";
+                    }
 
-    $("#login").click(function() {
-
-        var email = $("#inputEmail").val();
-        var password = $("#inputpassword").val();
-
-        $.ajax({
-            type: 'POST',
-            url: '/core/autenticar.php',
-            data: {
-                email, password
-            },
-            success: function(data) {
-                window.location = "/index.html";
-            },
-            error: function(err) {
-                window.alert("password incorreta");
-            }
-        })
+                }
+            });
+        }
 
     });
-
-});
 
 $.ajax({
     url: "login_reg_insert.php",

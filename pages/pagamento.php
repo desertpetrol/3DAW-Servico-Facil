@@ -1,5 +1,5 @@
 <?php
-include 'common.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/pages/common/common.php';
 head();
 navbar();
 ?>

@@ -17,7 +17,7 @@ $(document).ready(function () {
         else {
 
             $.ajax({
-                url: "login_reg_insert.php",
+                url: "signIn.php",
                 type: "POST",
                 data: {
                     email: email,
@@ -28,6 +28,7 @@ $(document).ready(function () {
                     var dataResult = JSON.parse(dataResult);
                     if (dataResult.statusCode == 200) {;
                         $('#register_form').val('');
+                        location.href = "/index.php";
                     }
                     else if (dataResult.statusCode == 201) {
                         window.alert('Email ja cadastrado!');
@@ -35,9 +36,7 @@ $(document).ready(function () {
                     }
                     else if (dataResult.statusCode == 204) {
                         window.alert('Peencha todos os campos!');
-
                     }
-
                 }
             });
         }

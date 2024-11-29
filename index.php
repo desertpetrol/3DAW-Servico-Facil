@@ -4,24 +4,26 @@ head();
 navbar();
 ?>
 <div class="d-flex align-items-center justify-content-center">
-<h1 class="h1"> Serviço Fácil</h1>
+  <h1 class="h1"> Cadastro de
+    <small class="text-muted">Cliente | Prestador</small>
+  </h1>
 </div>
 
 <div class="h-100 d-flex align-items-center justify-content-center">
-<form action="/core/login.php">
-    
-  <div class="form-group">
-    <label>Email</label>
-    <input type="email" name="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Digite seu Email">
-  </div>
+  <form id="register_form" name="register" method="post">
 
-  <div class="form-group">
-    <label>password</label>
-    <input type="password" name="password" class="form-control" id="Inputpassword" placeholder="password">
-  </div>
+    <div class="form-group">
+      <label> Email</label>
+      <input type="email" name="email" class="form-control" id="email_input" aria-describedby="emailHelp" placeholder="Digite seu Email">
+    </div>
 
-  <button type="submit" class="btn btn-primary" value="Registrar">Login</button>
-</form>
+    <div class="form-group">
+      <label> Senha</label>
+      <input type="password" name="password" class="form-control" id="password_input" placeholder="Senha">
+    </div>
+
+    <button type="button" class="btn btn-primary" value="login" id="login_btn">Registrar</button>
+  </form>
 </div>
 
 <a href="pages/cadastro.php">Quero ser cliente do serviço fácil.</a><br /><br />

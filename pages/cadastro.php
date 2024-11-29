@@ -20,12 +20,12 @@ navbar();
 
     <div class="form-group">
       <label> Senha</label>
-      <input type="password" name="password" class="form-control" id="password_input" placeholder="password">
+      <input type="password" name="password" class="form-control" id="password_input" placeholder="Senha">
     </div>
 
     <div class="form-group">
       <label> Confirmação de senha</label>
-      <input type="password" name="passwordConf" class="form-control" id="password_confirm_input" placeholder="Confirme sua password">
+      <input type="password" name="passwordConf" class="form-control" id="password_confirm_input" placeholder="Confirme sua Senha">
     </div>
 
     <button type="button" class="btn btn-primary" value="Registrar" id="signin_btn">Registrar</button>

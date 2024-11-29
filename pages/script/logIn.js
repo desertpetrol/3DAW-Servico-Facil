@@ -1,19 +1,16 @@
 // login
-$('#butlogin').on('click', function () {
-    $("#error1").hide();
-    var v = document.getElementById("error1");
+$('#login_button').on('click', function () {
     var username = $('#email_Input').val();
     var password = $('#password_Input').val();
     
-    if (username == "" && password == "") {
+    if (username == "" || password == "") {
         window.alert("Preencha todos os campos!")
     }
     else {
         $.ajax({
-            url: "login_reg_insert.php",
+            url: "login.php",
             type: "POST",
             data: {
-                type: 2,
                 username: username,
                 password: password
             },
@@ -21,12 +18,10 @@ $('#butlogin').on('click', function () {
             success: function (dataResult) {
                 var dataResult = JSON.parse(dataResult);
                 if (dataResult.statusCode == 200) {
-                    location.href = "home.php";
+                    location.href = "/pages/pedido.php";
                 }
                 else if (dataResult.statusCode == 201) {
-                    $("#error1").show();
-                    $('#error_show12').html('Invalid EmailId or Password !');
-                    v.className += " alert-danger";
+                    window.alert("Email ou Senha incorretos")
                 }
 
             }

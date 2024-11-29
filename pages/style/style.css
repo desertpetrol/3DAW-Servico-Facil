@@ -1,0 +1,120 @@
+body {
+  display: flexbox;/*Organiza os elementos da página HTML em containers*/
+  background-color: rgb(50, 72, 100);/*cor de fundo da página*/
+  color: rgb(255, 255, 255);/*cor das letras*/
+  font-family: "Times New Roman", Times, serif;/*tipo de fonte das letra na página*/
+}
+
+a:visited {
+  color: rgb(130, 130, 255);
+}
+
+ul {
+  display: flex;/*organiza os elementos em linhas ou colunas dentro de um container, neste caso o ul*/
+  margin: 10px;/*define a área de margem dos 4 lados dos elementos*/
+  padding-left: 0;/*a distância da borda esquerda é zero até o conteúdo do elemento*/
+  list-style: none;/*tira o estilo de lista da lista e só fica os nomes dos elementos*/
+  /*width: 720px;/*largura do elemento(lista) que ocupa na linha*/
+  background: #242424 url(./fundo-horizontal.png) repeat-x;/*cor de fundo da lista - imagem do bloco azul - repetição só horizontal*/
+  justify-content: center;/*elementos alinhados no centro do container*/
+  padding-block: 5px;/**/
+}
+ul a {
+  display: block;/*o elemento ul a está renderizado como um bloco ocupando toda a sua linha horizontal*/
+  padding: 0 2em;/*as bordas top bottom são de 0 distância e a left right de 2 vezes o valor do pai*/
+  line-height: 1em;/*altura que o texto pode ocupar que é de 1 vez o tamanho da fonte*/
+  text-decoration: none;/*retira a linha underline dos links*/
+  color: #fff;/*cor da fonte*/
+  background: url(./divisor.png) repeat-y left top;/*imagem do divisor azul - repetição vertical - à esquerda e superior*/
+}
+
+ul .primeiro a {
+  background: none;/*Pede para não efetuar o background divisor no item home do cabeçalho*/
+}
+
+ul a:hover { /*hover é o efeito no elemento ao passar o mouse*/
+  color: #778daa;/*cor da letra*/
+}
+
+#home #navegacao .home a,
+#confirmacao #navegacao .confirmacao a,
+#cadastro #navegacao .cadastro a,
+#pedido #navegacao .pedido a,
+#pagamento #navegacao .pagamento a {/*Há o id do body, o id da ul, a class de cada item do cabeçalho no a para fixar a página visitada do site com a configuração do hover*/
+  color: #085662;/*cor da letra*/
+  background: #44cade;/*cor de fundo*/
+}
+/* -----------Configurações de cabeçalho vertical---------- */
+/*ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+ul a {
+  width: 200px;
+  height: 40px;
+  display: block;
+  color: #000;
+  text-decoration: none;
+  text-indent: 40px;
+  line-height: 40px;
+  background: #f7b600 url(./assets/imagens/menu.png) no-repeat left bottom;
+}
+a:hover {
+  background-position: right bottom;
+  background-color: #f99200;
+  color: #fff;
+}
+#home #navegacao .home a,
+#confirmacao #navegacao .confirmacao a,
+#cadastro #navegacao .cadastro a,
+#pedido #navegacao .pedido a,
+#pagamento #navegacao .pagamento a{
+  background-position: right bottom;
+  background-color: #f99200;
+  color: #fff;
+}*/
+/*li{
+  padding: 5px 20px;
+  border: 1px solid red;
+  background: url(./assets/imagens/seta.png) no-repeat left center;
+  align-items: stretch
+}*/
+/* ------------ Fim das configurações da barra vertical ----------------- */
+h1 {
+  text-align: center;/*alinhamento da título h1 ao centro*/
+  margin-bottom: 20px;/*define a área de margem externa do elemento na parte inferior*/
+}
+#confirma{
+  text-align: center;
+}
+
+h2 {
+  text-align: center;/*alinhamento da título h2 ao centro*/
+  margin-bottom: 20px;/*define a área de margem externa do elemento na parte inferior*/
+}
+
+.formulario {
+  font-size: 150%;/*tamanho da letra*/
+  text-align: center;/*letra alinhada ao centro*/
+}
+
+form {
+  margin-top: 50px;/*define a área de margem externa do elemento na parte superior*/
+  font-weight: 700;/*efeito bold das letras*/
+}
+
+select {
+  border: 2px solid black;/*o tipo seletor de formulário com borda de espessura 2px sólida e preta*/
+}
+
+.texto input {
+  width: 250px;/*largura do formulário*/
+  border: 2px solid black;/*o tipo class texto de formulário com borda de espessura 2px sólida e preta*/
+  margin-top: 20px;/*espaço externo entre os elementos do formulário */
+  align-items:center;/*alinhamento padrão para itens dentro do contêiner, neste caso herdando do elemento pai as configurações*/
+}
+
+a {
+  text-decoration: none;/*retira a linha underline dos links*/
+}

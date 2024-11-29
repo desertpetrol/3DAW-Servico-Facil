@@ -1,0 +1,29 @@
+<?php
+require 'confirmcadastro.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+
+$testmail = test_input($_POST["login"]);
+$testpassword = test_input($_POST["password"]);
+
+include 'common.php';
+head();             
+navbar();
+
+}
+if($email==$testmail) 
+{
+    echo '<p id="confirma">Para validar sua conta, você deve acessar o e-mail e clicar no link fornecido.</p>';
+}
+else
+{
+    echo '<h1>Você está cadastrado(a) no Serviço Fácil.</h1>';
+}
+
+foot();
+
+
+?>
+
+
+

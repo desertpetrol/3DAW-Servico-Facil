@@ -17,24 +17,23 @@ $(document).ready(function () {
         else {
 
             $.ajax({
-                url: "signIn.php",
+                url: "/core/signIn.php",
                 type: "POST",
                 data: {
                     email: email,
                     password: password
                 },
-                cache: false,
-                success: function (dataResult) {
-                    var dataResult = JSON.parse(dataResult);
-                    if (dataResult.statusCode == 200) {;
+                success: data => {
+                    console.log(data);
+                    if (data.statusCode == 200) {;
                         $('#register_form').val('');
                         location.href = "/index.php";
                     }
-                    else if (dataResult.statusCode == 201) {
+                    else if (data.statusCode == 201) {
                         window.alert('Email ja cadastrado!');
 
                     }
-                    else if (dataResult.statusCode == 204) {
+                    else if (data.statusCode == 204) {
                         window.alert('Peencha todos os campos!');
                     }
                 }

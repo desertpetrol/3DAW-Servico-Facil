@@ -22,14 +22,14 @@ navbar();
       <input type="password" name="password" class="form-control" id="password_input" placeholder="Senha">
     </div>
 
-    <button type="button" class="btn btn-primary" value="login" id="login_btn">Registrar</button>
+    <button type="button" class="btn btn-primary" value="login" id="login_btn">Login</button>
   </form>
 </div>
 
 <a href="pages/cadastro.php">Quero ser cliente do serviço fácil.</a><br /><br />
 <a href="pages/cadastro.php">Sou profissional e quero me candidatar a prestar serviços.</a>
 
-<script src="pages/script/logIn.js"></script>
+<script src="/pages/script/logIn.js"></script>
 
 
 <?php

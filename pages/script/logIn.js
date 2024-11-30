@@ -1,5 +1,5 @@
 // login
-$('#login_button').on('click', function () {
+$('#login_btn').on('click', function () {
     var username = $('#email_Input').val();
     var password = $('#password_Input').val();
     
@@ -8,7 +8,7 @@ $('#login_button').on('click', function () {
     }
     else {
         $.ajax({
-            url: "login.php",
+            url: "/core/login.php",
             type: "POST",
             data: {
                 username: username,

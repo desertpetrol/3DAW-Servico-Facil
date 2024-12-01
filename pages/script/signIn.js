@@ -29,7 +29,7 @@ $(document).ready(function () {
                         $('#register_form').val('');
                         location.href = "/index.php";
                     }
-                    else if (data.statusCode == 201) {
+                    else if (data.statusCode == 409) {
                         window.alert('Email ja cadastrado!');
 
                     }

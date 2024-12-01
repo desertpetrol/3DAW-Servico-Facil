@@ -4,13 +4,11 @@ head();
 navbar();
 ?>
 <div class="d-flex align-items-center justify-content-center">
-  <h1 class="h1"> Cadastro de
-    <small class="text-muted">Cliente | Prestador</small>
-  </h1>
+  <h1 class="h1">Entrar </h1>
 </div>
 
 <div class="h-100 d-flex align-items-center justify-content-center">
-  <form id="register_form" name="register" method="post">
+  <form id="login_form" name="login" method="GET">
 
     <div class="form-group">
       <label> Email</label>

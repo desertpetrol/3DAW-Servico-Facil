@@ -30,6 +30,7 @@ function head()
 
 function navbar()
 {
+    session_start();
     echo '<nav class="d-flex .flex-row">';
 
     echo' 
@@ -41,13 +42,14 @@ function navbar()
             <li class="confirmacao"><a href="/pages/confirmacao.php">Confirmação</a></li>
         </ul>';
 
-    session_start();
+
     if(!isset($_SESSION["username"])){
         echo 
         '<div class="w-25"><span>Você não está logado</span></div>';
     } else if (isset($_SESSION["username"])){
         echo 
-        '<div class="w-25"><span>Você está logado como:'.$_SESSION["username"].' </span></div>';
+        '<div class="w-25"><span>Você está logado como:'.$_SESSION["username"].' </span></div>
+        <div> <a href="/core/logout.php"><span>Logout</span></a></div>';
     }
 
     echo '</nav>';

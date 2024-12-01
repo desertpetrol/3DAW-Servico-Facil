@@ -15,7 +15,7 @@ $('#login_btn').on('click', function () {
                 password: password
             },
             cache: false,
-            dataType: "json", // Ensures the server's JSON response is parsed
+            dataType: "json",
             success: function (dataResult) {
                 if (dataResult.statusCode === 200) {
                     location.href = "/pages/pedido.php";

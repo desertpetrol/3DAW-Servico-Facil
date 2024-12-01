@@ -28,6 +28,7 @@ $(document).ready(function () {
                     if (data.statusCode == 200) {;
                         $('#register_form').val('');
                         location.href = "/index.php";
+                        window.alert('Conta cadastrada!');
                     }
                     else if (data.statusCode == 409) {
                         window.alert('Email ja cadastrado!');

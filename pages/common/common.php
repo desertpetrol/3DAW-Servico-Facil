@@ -30,15 +30,27 @@ function head()
 
 function navbar()
 {
-    echo '<div id="cabecalho">
-    <ul id="navegacao">
-      <li class="home primeiro"><a href="/index.php">Home</a></li>
-      <li class="cadastro"><a href="/pages/cadastro.php">Cadastro</a></li>
-      <li class="pedido"><a href="/pages/pedido.php">Pedido</a></li>
-      <li class="pagamento"><a href="/pages/pagamento.php">Pagamento</a></li>
-      <li class="confirmacao"><a href="/pages/confirmacao.php">Confirmação</a></li>
-    </ul>
-</div>';
+    echo '<nav class="d-flex .flex-row">';
+
+    echo' 
+        <ul class = "w-75" id="navegacao">
+            <li class="home primeiro"><a href="/index.php">Home</a></li>
+            <li class="cadastro"><a href="/pages/cadastro.php">Cadastro</a></li>
+            <li class="pedido"><a href="/pages/pedido.php">Pedido</a></li>
+            <li class="pagamento"><a href="/pages/pagamento.php">Pagamento</a></li>
+            <li class="confirmacao"><a href="/pages/confirmacao.php">Confirmação</a></li>
+        </ul>';
+
+    session_start();
+    if(!isset($_SESSION["username"])){
+        echo 
+        '<div class="w-25"><span>Você não está logado</span></div>';
+    } else if (isset($_SESSION["username"])){
+        echo 
+        '<div class="w-25"><span>Você está logado como:'.$_SESSION["username"].' </span></div>';
+    }
+
+    echo '</nav>';
 }
 
 function foot()

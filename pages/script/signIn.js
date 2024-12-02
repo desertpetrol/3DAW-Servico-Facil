@@ -1,9 +1,9 @@
 $(document).ready(function () {
     // register
     $('#signin_btn').on('click', function () {
-        var email = $('#email_input').val();
-        var password = $('#password_input').val();
-        var confirm_password = $('#password_confirm_input').val();
+        let email = $('#email_input').val();
+        let password = $('#password_input').val();
+        let confirm_password = $('#password_confirm_input').val();
 
         if (!email) {
             window.alert('Preencha o email!');
@@ -24,7 +24,6 @@ $(document).ready(function () {
                     password: password
                 },
                 success: data => {
-                    console.log(data);
                     if (data.statusCode == 200) {;
                         $('#register_form').val('');
                         location.href = "/index.php";

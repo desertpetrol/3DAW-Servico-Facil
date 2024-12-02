@@ -1,7 +1,7 @@
 // login
 $('#login_btn').on('click', function () {
-    var email = $('#email_input').val();
-    var password = $('#password_input').val();
+    let email = $('#email_input').val();
+    let password = $('#password_input').val();
     
     if (email == "" || password == "") {
         window.alert("Preencha todos os campos!")

@@ -2,8 +2,9 @@
 
 include $_SERVER['DOCUMENT_ROOT'] . '/core/db.php';
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+
+$email = $_GET['email'] ?? null;
+$password = $_GET['password'] ?? null;
 $type = 1;
 
 if (!empty($password) && !empty($email)) {

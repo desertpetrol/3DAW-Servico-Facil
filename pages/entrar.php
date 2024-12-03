@@ -23,8 +23,8 @@ head();
   </form>
 </div>
 
-<a href="pages/cadastro.php">Quero ser cliente do serviço fácil.</a><br /><br />
-<a href="pages/cadastro.php">Sou profissional e quero me candidatar a prestar serviços.</a>
+<a href="/pages/cadastro.php">Quero ser cliente do serviço fácil.</a><br /><br />
+<a href="/pages/cadastro.php">Sou profissional e quero me candidatar a prestar serviços.</a>
 
 <script src="/pages/script/logIn.js"></script>
 

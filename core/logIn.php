@@ -13,17 +13,16 @@ if (!empty($email) || !empty($password)) {
         $stmt = $pdo->prepare("SELECT * FROM user WHERE email = :email AND password = :password");
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':password', $password, PDO::PARAM_STR);
-        $stmt->bindParam(':type', $type, PDO::PARAM_STR);
-        $stmt->bindParam(':credit', $credit, PDO::PARAM_STR);
 
         // Execute the statement
         $stmt->execute();
 
-        // Check if any rows were returned
         if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $_SESSION['username'] = $email;
-            $_SESSION['type'] = $tipo;
-            $_SESSION['credito'] = $credit;
+            $_SESSION['type'] = $row['type'];
+            $_SESSION['credit'] = $row['credit'];
+            
             http_response_code(200);
             echo json_encode(array("statusCode" => 200,));
         } else {

@@ -30,26 +30,13 @@ function head()
 
 function navbar()
 {
-    echo '<nav class="d-flex .flex-row">';
-
-    echo' 
-        <ul class = "w-75" id="navegacao">
-            <li class="home primeiro"><a href="/index.php">Home</a></li>
-            <li class="cadastro"><a href="/pages/cadastro.php">Cadastro</a></li>
-            <li class="pedido"><a href="/pages/pedido.php">Pedido</a></li>
-            <li class="pagamento"><a href="/pages/pagamento.php">Pagamento</a></li>
-            <li class="confirmacao"><a href="/pages/confirmacao.php">Confirmação</a></li>
-        </ul>';
-
-
-    if(!isset($_SESSION["username"])){
-        echo 
-        '<div class="w-25"><span>Você não está logado</span></div>';
-    } else if (isset($_SESSION["username"])){
-        echo 
-        '<div class="w-25"><span>Você está logado como:'.$_SESSION["username"].' </span></div>
-        <div> <a href="/core/logout.php"><span>Logout</span></a></div>';
-    }
+    echo '<nav class="d-flex ms-auto bd-highlight bg-grey d-flex justify-content-around">';
+    
+    echo '<div class="me-auto p-2 bd-highlight"><a href="/pages/servicos.php">Pagamento</a></div>
+            <div class="p-2 bd-highlight"><span>Você está logado como:' . $_SESSION["username"] . '</span></div>
+            <div class="p-2 bd-highlight"><span>Credito: ' . $_SESSION["credit"] . '</span></div>
+            <div class="p-2 bd-highlight"><a href="/core/logout.php"><span>Logout</a></div>';
+            
 
     echo '</nav>';
 }

@@ -1,4 +1,5 @@
 <?php
+include $_SERVER['DOCUMENT_ROOT'] . '/core/auth.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/pages/common/common.php';
 head();
 navbar();
@@ -6,36 +7,32 @@ navbar();
 
 <h2>Confirme o Preço do Serviço</h2>
 <div class="formulario">
-<form>
-    Tipos de Serviço:    
-    <select name="servico">
-        <option value="BH">Bombeiro Hidráulico</option>
-        <option value="CH">Chaveiro</option>
-        <option value="MC">Marceneiro</option>
-        <option value="EL">Eletricista</option>
-        <option value="PE">Pedreiro</option>
-        <option value="PI">Pintor</option>
-        <option value="CE">Conserto Eletrodoméstico</option>
-    </select>
-    <br>
-    <div class="texto">
-    Serviço:
-    <input type="text" name="servico">
-    <br>
-    Preço:
-    <input type="text" name="preco">
-    <br>
-    Seu Crédito:
-    <input type="text" name="credito">
-    <br>
-    Valor a Ser Cobrado:
-    <input type="text" name="preco_cobrado">
-    <br><br>
+    <div class="form-group">
+        <label>Tipo de Serviço:</label>
+        <span><?php echo htmlspecialchars($especialidade); ?></span>
     </div>
-    <input type="submit" value="Confirmar">
-</form>
-
+    <div class="form-group">
+        <label>Serviço:</label>
+        <span><?php echo htmlspecialchars($servico); ?></span>
+    </div>
+    <div class="form-group">
+        <label>Preço do Serviço:</label>
+        <span>R$ <?php echo number_format($valor, 2, ',', '.'); ?></span>
+    </div>
+    <div class="form-group">
+        <label>Crédito do Cliente:</label>
+        <span>R$ <?php echo number_format($credito, 2, ',', '.'); ?></span>
+    </div>
+    <div class="form-group">
+        <label>Total a Ser Cobrado:</label>
+        <span>R$ <?php echo number_format($total, 2, ',', '.'); ?></span>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success">Confirmar</button>
 </div>
-<script src="script.js"></script>
+<script src="/pages/script/servicos.js"></script>
 
-</html>
+<?php
+foot();
+?>
+

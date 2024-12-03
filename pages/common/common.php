@@ -30,7 +30,6 @@ function head()
 
 function navbar()
 {
-    session_start();
     echo '<nav class="d-flex .flex-row">';
 
     echo' 

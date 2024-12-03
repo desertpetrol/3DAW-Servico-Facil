@@ -15,7 +15,6 @@ $(document).ready(function () {
             window.alert('senhas são diferentes!');
         }
         else {
-
             $.ajax({
                 url: "/core/signIn.php",
                 type: "POST",
@@ -24,18 +23,13 @@ $(document).ready(function () {
                     password: password
                 },
                 success: data => {
-                    if (data.statusCode == 200) {;
-                        $('#register_form').val('');
-                        location.href = "/index.php";
-                        window.alert('Conta cadastrada!');
-                    }
-                    else if (data.statusCode == 409) {
-                        window.alert('Email ja cadastrado!');
-
-                    }
-                    else if (data.statusCode == 204) {
-                        window.alert('Peencha todos os campos!');
-                    }
+                    $('#register_form').val('');
+                    location.href = "/index.php";
+                    window.alert('Conta cadastrada!');
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error occurred: " + status + " - " + error);
+                    window.alert("Ocorreu um erro " + status + " - " + error);
                 }
             });
         }

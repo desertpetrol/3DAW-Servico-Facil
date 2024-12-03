@@ -32,11 +32,13 @@ function navbar()
 {
     echo '<nav class="d-flex ms-auto bd-highlight bg-grey d-flex justify-content-around">';
     
-    echo '<div class="me-auto p-2 bd-highlight"><a href="/pages/servicos.php">Pagamento</a></div>
-            <div class="p-2 bd-highlight"><span>Você está logado como:' . $_SESSION["username"] . '</span></div>
-            <div class="p-2 bd-highlight"><span>Credito: ' . $_SESSION["credit"] . '</span></div>
-            <div class="p-2 bd-highlight"><a href="/core/logout.php"><span>Logout</a></div>';
+    echo '<div class="me-auto p-2 bd-highlight"><a href="/pages/servicos.php">Serviços</a></div>';
+    echo  '<div class="p-2 bd-highlight"><span>Você está logado como:' . $_SESSION["username"] . '</span></div>';
+            if($_SESSION['type'] == 1) {
+                echo '<div class="p-2 bd-highlight"><span>Credito: ' . $_SESSION["credit"] . '</span></div>';
+            }
             
+            echo '<div class="p-2 bd-highlight"><a href="/core/logout.php"><span>Logout</a></div>';   
 
     echo '</nav>';
 }

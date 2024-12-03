@@ -8,7 +8,7 @@ $('#login_btn').on('click', function () {
     }
     else {
         $.ajax({
-            url: "/core/login.php",
+            url: "/core/logIn.php",
             type: "GET",
             data: {
                 email: email,

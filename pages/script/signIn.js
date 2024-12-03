@@ -17,15 +17,15 @@ $(document).ready(function () {
         else {
             $.ajax({
                 url: "/core/signIn.php",
-                type: "POST",
+                type: "GET",
                 data: {
                     email: email,
                     password: password
                 },
                 success: data => {
                     $('#register_form').val('');
-                    location.href = "/index.php";
                     window.alert('Conta cadastrada!');
+                    location.href = "/index.php";
                 },
                 error: function (xhr, status, error) {
                     console.error("Error occurred: " + status + " - " + error);

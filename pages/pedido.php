@@ -41,7 +41,7 @@ navbar();
             </select>
         </div>
         <br><br>
-        <input type="submit" value="Confirmar Pedido">
+        <input id="service_btn" type="button" value="Confirmar Pedido">
     </form>
 </div>
 

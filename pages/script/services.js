@@ -24,7 +24,7 @@ $(function() {
 });
 
 function adicionarLinhaNaTabela(servico) {
-    $("<tr><td id='servico_descricao_" + servico.id + "'>" + 
+    $("<tr><td id='servico_descricao" + servico.id + "'>" + 
         servico.task + "</td><td>" + 
         servico.date_init + "</td><td>" + 
         (servico.date_end == "null" ? servico.date_end : "----") + "</td><td>" +

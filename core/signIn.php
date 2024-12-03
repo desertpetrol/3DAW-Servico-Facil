@@ -13,7 +13,7 @@ if (!empty($password) && !empty($email)) {
     $stmt = $pdo->prepare("SELECT * FROM user WHERE email = :email");
     $stmt->execute(['email' => $email]);
     if ($stmt->rowCount() > 0) {
-        http_response_code(201);
+        http_response_code(409);
         exit;
     }
 
